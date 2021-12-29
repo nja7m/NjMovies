@@ -5,17 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.example.njmovies.R
+import com.example.njmovies.View.Activities.Home.HomeViewModel
+import com.example.njmovies.databinding.FragmentMyListBinding
 
 
 class MyListFragment : Fragment() {
+
+	private val viewModel: HomeViewModel by activityViewModels()
+	private lateinit var binding: FragmentMyListBinding
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
 	): View? {
 		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.fragment_my_list, container, false)
+		binding = FragmentMyListBinding.inflate(inflater, container, false)
+
+		return binding.root
 	}
 
 	companion object {

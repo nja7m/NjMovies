@@ -1,5 +1,6 @@
 package com.example.njmovies.View.Activities.Home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -7,12 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.njmovies.R
+import com.example.njmovies.View.Activities.Login.LoginActivity
 import com.example.njmovies.View.Fragment.HomeFragment
 import com.example.njmovies.View.Fragment.MyListFragment
 import com.example.njmovies.View.Fragment.SearchFragment
 import com.example.njmovies.View.Fragment.SettingFragment
 import com.example.njmovies.databinding.ActivityHomeBinding
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
 
 
 class HomeActivity : AppCompatActivity() {
@@ -20,6 +23,14 @@ class HomeActivity : AppCompatActivity() {
 	var actionBarDrawerToggle: ActionBarDrawerToggle? = null
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
+
+		if (FirebaseAuth.getInstance().currentUser == null) {
+			val intent = Intent(this, LoginActivity::class.java)
+			startActivity(intent)
+			finish()
+			return
+		}
+
 		val viewModel: HomeViewModel by viewModels()
 		var binding = ActivityHomeBinding.inflate(layoutInflater)
 		setContentView(binding.root)
