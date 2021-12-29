@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "414961539219",
+    "project_id": "njmovies-d48e1",
+    "storage_bucket": "njmovies-d48e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414961539219:android:ffb527e317b03116a55566",
+        "android_client_info": {
+          "package_name": "com.example.njmovies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414961539219-q14eukik1ln78tjud2i5d8slarknkm6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBizpZXypq6cJDtvxg1M3yOLPPgb_Obo-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414961539219-q14eukik1ln78tjud2i5d8slarknkm6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
