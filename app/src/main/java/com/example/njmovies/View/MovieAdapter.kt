@@ -40,7 +40,7 @@ class MovieAdapter :
 			//get instance of the DoggoImageViewHolder
 			fun getInstance(parent: ViewGroup): MovieViewHolder {
 				val inflater = LayoutInflater.from(parent.context)
-				val view = inflater.inflate(R.layout.movie_card_view, parent, false)
+				val view = inflater.inflate(R.layout.home_movie_card_view, parent, false)
 				return MovieViewHolder(view)
 			}
 		}

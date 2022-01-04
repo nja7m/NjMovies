@@ -1,9 +1,12 @@
 package com.example.njmovies.Network
 
 import com.example.njmovies.Model.MovieResponse
+import com.example.njmovies.Model.MovieResult
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MovieService {
@@ -30,6 +33,9 @@ interface MovieService {
 		@Query("api_key") apiKey: String,
 		@Query("page") page: Int
 	): MovieResponse
+
+	@GET("movie/{movieId}")
+	fun getMovieById(@Path("movieId") id: Int, @Query("api_key") apiKey: String): Call<MovieResult>
 
 
 	companion object {

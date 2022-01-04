@@ -1,6 +1,7 @@
 package com.example.njmovies.View.Fragment
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,16 @@ class SettingFragment : Fragment() {
 
 
 		}
+		var contactSupport = v.findViewById<Button>(R.id.buttonContactSupport)
+        contactSupport.setOnClickListener {
+        val intent = Intent(Intent.ACTION_SENDTO)
+	        intent.data= Uri.parse("mailto:")
+	        intent.putExtra(Intent.EXTRA_EMAIL,"njah.rashid@outlook.com")
+	        intent.putExtra(Intent.EXTRA_SUBJECT,"Customer Service")
+	        intent.putExtra(Intent.EXTRA_TEXT," ")
+	        startActivity(intent)
+
+        }
 		return v
 
 		// Inflate the layout for this fragment

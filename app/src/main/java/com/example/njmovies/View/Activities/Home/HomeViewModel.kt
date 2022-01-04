@@ -8,6 +8,7 @@ import androidx.paging.PagingData
 import com.example.njmovies.Model.MovieCategory
 import com.example.njmovies.Model.MovieResult
 import com.example.njmovies.Network.FirebaseService
+import com.example.njmovies.Repository.MovieRepository
 import com.example.njmovies.util.MoviePagingSource
 import com.example.njmovies.util.ResultListener
 import com.google.firebase.auth.FirebaseAuth
@@ -17,6 +18,7 @@ private const val TAG = "HomeViewModel"
 
 class HomeViewModel : ViewModel() {
 	private val firebaseAuth = FirebaseAuth.getInstance()
+	private val movieRepository = MovieRepository()
 	private val firebaseService = FirebaseService()
 
 	fun getMovies(movieCategory: MovieCategory): Flow<PagingData<MovieResult>> {
@@ -30,6 +32,10 @@ class HomeViewModel : ViewModel() {
 	fun addMovieToList(id: Int, resultListener: ResultListener) {
 		firebaseService.addMovieToList(id, resultListener)
 	}
+
+	fun getMovieList() = firebaseService.getMovieList()
+
+	fun getMovieById(id: Int) = movieRepository.getMovieById(id)
 
 	fun logout() = firebaseAuth.signOut()
 }

@@ -1,5 +1,6 @@
 package com.example.njmovies.Network
 
+import androidx.lifecycle.MutableLiveData
 import com.example.njmovies.util.ResultListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -37,5 +38,26 @@ class FirebaseService() {
 					exception.printStackTrace()
 				}
 		}
+	}
+
+	fun getMovieList(): MutableLiveData<List<Int>> {
+		val liveData = MutableLiveData<List<Int>>()
+
+		firebaseAuthService!!.uid?.let { userUid ->
+			firestore
+				.collection("users")
+				.document(userUid)
+				.get()
+				.addOnSuccessListener { document ->
+					val list = document["list"] as List<Int>
+					liveData.postValue(list)
+				}
+				.addOnFailureListener { exception ->
+					liveData.postValue(null)
+					exception.printStackTrace()
+				}
+		}
+
+		return liveData
 	}
 }

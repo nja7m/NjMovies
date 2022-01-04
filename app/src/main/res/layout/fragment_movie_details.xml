@@ -9,6 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarMovieDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
         <ImageView
             android:id="@+id/movie_backdrop"
             android:layout_width="0dp"
@@ -102,7 +110,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
             android:background="@drawable/mybutton"
-            android:text="Add to my list"
             android:textColor="@color/white"
             android:textSize="11sp"
             android:textStyle="bold"
