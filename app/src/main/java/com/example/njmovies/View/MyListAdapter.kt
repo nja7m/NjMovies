@@ -1,5 +1,6 @@
 package com.example.njmovies.View
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.njmovies.Model.MovieResult
 import com.example.njmovies.R
+import com.example.njmovies.View.Activities.MovieDetails.MovieDetailsActivity
 import com.example.njmovies.View.Fragment.MovieDetailsFragment
 import com.squareup.picasso.Picasso
 
@@ -19,6 +21,7 @@ class MyListAdapter(private var list: MutableList<MovieResult> = mutableListOf()
 	}
 
 	override fun onBindViewHolder(holder: MyListViewHolder, position: Int) {
+		val context = holder.itemView.context
 		Picasso
 			.get()
 			.load("https://image.tmdb.org/t/p/w500/" + list[position].poster_path)
@@ -27,13 +30,16 @@ class MyListAdapter(private var list: MutableList<MovieResult> = mutableListOf()
 			.into(holder.poster)
 
 		holder.itemView.setOnClickListener {
-			val activity = it.context as AppCompatActivity
-			activity.supportFragmentManager.beginTransaction()
-				.replace(
-					R.id.home_fragment_container_view,
-					MovieDetailsFragment.newInstance(list[position])
-				)
-				.commit()
+//			val activity = it.context as AppCompatActivity
+//			activity.supportFragmentManager.beginTransaction()
+//				.replace(
+//					R.id.home_fragment_container_view,
+//					MovieDetailsFragment.newInstance(list[position])
+//				)
+//				.commit()
+			val intent = Intent(context, MovieDetailsActivity::class.java)
+			intent.putExtra("Movie",list[position])
+			context.startActivity(intent)
 		}
 	}
 

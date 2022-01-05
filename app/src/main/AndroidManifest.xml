@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NjMovies">
         <activity
+            android:name=".View.Activities.MovieDetails.MovieDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".View.MyList.MyListActivity"
             android:exported="false" />
         <activity

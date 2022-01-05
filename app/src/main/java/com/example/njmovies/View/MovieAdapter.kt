@@ -1,5 +1,6 @@
 package com.example.njmovies.View.Home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.njmovies.Model.MovieResult
 import com.example.njmovies.R
+import com.example.njmovies.View.Activities.MovieDetails.MovieDetailsActivity
 import com.example.njmovies.View.Fragment.MovieDetailsFragment
 import com.squareup.picasso.Picasso
 
@@ -22,14 +24,19 @@ class MovieAdapter :
 
 	override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 		(holder as? MovieViewHolder)?.bind(item = getItem(position))
+		val context = holder.itemView.context
 		holder.itemView.setOnClickListener {
-			val activity = it.context as AppCompatActivity
-			activity.supportFragmentManager.beginTransaction()
-				.replace(
-					R.id.home_fragment_container_view,
-					MovieDetailsFragment.newInstance(getItem(position)!!)
-				)
-				.commit()
+//			val activity = it.context as AppCompatActivity
+//			activity.supportFragmentManager.beginTransaction()
+//				.replace(
+//					R.id.home_fragment_container_view,
+//					MovieDetailsFragment.newInstance(getItem(position)!!)
+//				)
+//				.commit()
+			val intent = Intent(context,MovieDetailsActivity::class.java)
+			intent.putExtra("Movie",getItem(position))
+			context.startActivity(intent)
+
 		}
 	}
 

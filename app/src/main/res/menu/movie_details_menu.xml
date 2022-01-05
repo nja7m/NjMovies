@@ -1,7 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:icon="@drawable/ic_baseline_arrow_back_ios_new_24"
-        android:title="Item" />
-</menu>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"/>

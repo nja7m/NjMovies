@@ -29,13 +29,14 @@ class HomeViewModel : ViewModel() {
 		}).flow
 	}
 
-	fun addMovieToList(id: Int, resultListener: ResultListener) {
+	fun addMovieToList(id: Long, resultListener: ResultListener) {
 		firebaseService.addMovieToList(id, resultListener)
 	}
 
 	fun getMovieList() = firebaseService.getMovieList()
+	fun movieExist(id:Long)=firebaseService.movieISExist(id)
 
-	fun getMovieById(id: Int) = movieRepository.getMovieById(id)
+	fun getMovieById(id: Long) = movieRepository.getMovieById(id)
 
 	fun logout() = firebaseAuth.signOut()
 }

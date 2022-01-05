@@ -10,7 +10,8 @@ class MovieRepository {
 	suspend fun getNowPlaying(page: Int = 1) = service.getNowPlaying(apiKey, page)
 	suspend fun getTopRated(page: Int = 1) = service.getTopRated(apiKey, page)
 	suspend fun getUpComing(page: Int = 1) = service.getUpComing(apiKey, page)
+	fun getMovieVideos(movieId: Long) = service.getVideos(movieId, apiKey)
 
-	fun getMovieById(id: Int) = service.getMovieById(id, apiKey)
+	fun getMovieById(id: Long) = service.getMovieById(id, apiKey)
 
 }

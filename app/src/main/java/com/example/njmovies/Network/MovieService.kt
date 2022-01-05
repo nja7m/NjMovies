@@ -2,6 +2,7 @@ package com.example.njmovies.Network
 
 import com.example.njmovies.Model.MovieResponse
 import com.example.njmovies.Model.MovieResult
+import com.example.njmovies.Model.TrailerResponse
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -34,8 +35,17 @@ interface MovieService {
 		@Query("page") page: Int
 	): MovieResponse
 
+	@GET("movie/{movie_id}/videos")
+	fun getVideos(
+		@Path("movie_id") id: Long,
+		@Query("api_key") apiKey: String
+	): Call<TrailerResponse>
+
 	@GET("movie/{movieId}")
-	fun getMovieById(@Path("movieId") id: Int, @Query("api_key") apiKey: String): Call<MovieResult>
+	fun getMovieById(
+		@Path("movieId") id: Long,
+		@Query("api_key") apiKey: String
+	): Call<MovieResult>
 
 
 	companion object {

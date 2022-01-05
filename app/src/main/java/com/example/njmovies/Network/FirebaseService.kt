@@ -8,7 +8,7 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
-class FirebaseService() {
+class FirebaseService {
 
 	private val firestore = FirebaseFirestore.getInstance()
 
@@ -24,12 +24,12 @@ class FirebaseService() {
 			}
 	}
 
-	fun addMovieToList(id: Int, resultListener: ResultListener) {
+	fun addMovieToList(id: Long, resultListener: ResultListener) {
 		firebaseAuthService!!.uid?.let { userUid ->
 			firestore
 				.collection("users")
-					.document(userUid)
-					.update("list", FieldValue.arrayUnion(id))
+				.document(userUid)
+				.update("movieList", FieldValue.arrayUnion(id))
 				.addOnSuccessListener {
 					resultListener.onSuccess()
 				}
@@ -40,8 +40,25 @@ class FirebaseService() {
 		}
 	}
 
-	fun getMovieList(): MutableLiveData<List<Int>> {
-		val liveData = MutableLiveData<List<Int>>()
+	fun deleteMovieFromList(id: Long, resultListener: ResultListener) {
+		firebaseAuthService!!.uid?.let { userUid ->
+			firestore
+				.collection("users")
+				.document(userUid)
+				.update("movieList", FieldValue.arrayRemove(id))
+				.addOnSuccessListener {
+					resultListener.onSuccess()
+				}
+				.addOnFailureListener {
+					resultListener.onFailure(it)
+					it.printStackTrace()
+				}
+
+		}
+	}
+
+	fun getMovieList(): MutableLiveData<List<Long>> {
+		val liveData = MutableLiveData<List<Long>>()
 
 		firebaseAuthService!!.uid?.let { userUid ->
 			firestore
@@ -49,7 +66,7 @@ class FirebaseService() {
 				.document(userUid)
 				.get()
 				.addOnSuccessListener { document ->
-					val list = document["list"] as List<Int>
+					val list = document["movieList"] as List<Long>
 					liveData.postValue(list)
 				}
 				.addOnFailureListener { exception ->
@@ -59,5 +76,15 @@ class FirebaseService() {
 		}
 
 		return liveData
+	}
+
+	fun movieISExist(id: Long): MutableLiveData<Boolean> {
+		var liveDate = MutableLiveData<Boolean>()
+
+		getMovieList().observeForever {
+			println("" + id + "    " + it)
+			liveDate.postValue(it.contains(id))
+		}
+		return liveDate
 	}
 }
