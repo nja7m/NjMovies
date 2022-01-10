@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.njmovies.Model.MovieResult
-import com.example.njmovies.R
-import com.example.njmovies.View.Activities.Home.HomeViewModel
+import com.example.njmovies.View.Activity.Home.HomeViewModel
 import com.example.njmovies.View.MyListAdapter
 import com.example.njmovies.databinding.FragmentMyListBinding
 import retrofit2.Call

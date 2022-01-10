@@ -1,4 +1,4 @@
-package com.example.njmovies.View.Activities.Login
+package com.example.njmovies.View.Activity.Login
 
 import android.content.Context
 import android.content.Intent
@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.njmovies.Model.User
-import com.example.njmovies.View.Activities.Home.HomeActivity
-import com.example.njmovies.View.Activities.Register.RegisterActivity
+import com.example.njmovies.View.Activity.Home.HomeActivity
+import com.example.njmovies.View.Activity.Register.RegisterActivity
 import com.example.njmovies.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NjMovies</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="MyList">قائمتي</string>
+    <string name="Setting">الإعدادات</string>
+    <string name="Logout">تسجيل الخروج</string>
+    <string name="Login">تسجيل الدخول</string>
+    <string name="Login_to_continue">سجل الدخول للاستمرار</string>
+    <string name="you_do_not_have_an_account">لا يوجد لديك حساب؟</string>
+    <string name="Register">تسجيل جديد</string>
+    <string name="create_an_account">انشاء حساب</string>
+    <string name="sign_up_to_continue">إنشاء تسجيل للاستمرار</string>
+    <string name="name">الاسم</string>
+    <string name="already_have_an_account">هل لديك حساب؟</string>
+    <string name="Email">الحساب الإلكتروني</string>
+    <string name="Password">كلمة السر</string>
+
+    <string name="popular">الأكثر شهرة</string>
+    <string name="most_popular_movies">الأفلام الأكثر شهرة</string>
+    <string name="now_playing">يعرض حالياً</string>
+    <string name="now_on_theaters">يعرض الآن فالسينما</string>
+    <string name="top_rated">الأكثر تقيماً</string>
+    <string name="highest_rated_movies">أعلى الأفلام تقييما في كل العصورً</string>
+    <string name="upcoming">قريباً</string>
+    <string name="stay_updated">ابق على اطلاع بأحدث الأفلام</string>
+    <string name="error_fetch_movies">الرجاء التحقق من اتصال الانترنت الخاص بك</string>
+    <string name="change_language">Change Language</string>
+    <string name="contact_support">اتصل بالدعم</string>
+</resources>

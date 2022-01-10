@@ -1,4 +1,4 @@
-package com.example.njmovies.View.Activities.Register
+package com.example.njmovies.View.Activity.Login
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -8,25 +8,21 @@ import com.example.njmovies.Network.FirebaseService
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class RegisterViewModel : ViewModel() {
-
+class LoginViewModel : ViewModel() {
 	val firebaseAuthService = FirebaseService.firebaseAuthService!!
 	val db = Firebase.firestore
 
-	fun register(user: User): MutableLiveData<User> {
+	fun Login(user: User): MutableLiveData<User> {
 		var liveData = MutableLiveData<User>()
-		firebaseAuthService
-			.createUserWithEmailAndPassword(user.email, user.password)
+		firebaseAuthService.signInWithEmailAndPassword(user.email, user.password)
 			.addOnSuccessListener {
-				db.collection("users").document(firebaseAuthService.currentUser!!.uid).set(user)
 				liveData.postValue(user)
-			}
-			.addOnFailureListener {
+			}.addOnFailureListener {
 				liveData.postValue(null)
-				Log.e("nj", "Error: ${it.message}")
+				it.message?.let { it1 -> Log.e("Nj", it1) }
+				Log.e("Nj", user.toString())
 			}
-
 		return liveData
-
 	}
+
 }

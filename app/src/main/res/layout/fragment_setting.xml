@@ -18,7 +18,7 @@
             android:layout_marginEnd="116dp"
             android:layout_marginBottom="188dp"
             android:background="@drawable/mybutton"
-            android:text="Logout"
+            android:text="@string/Logout"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -30,21 +30,10 @@
             android:layout_marginEnd="120dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/mybutton"
-            android:text="Contact support"
+            android:text="@string/contact_support"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/buttonLogout"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/buttonChangeLanguage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="120dp"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/mybutton"
-            android:text="change language"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/buttonContactSupport"
-            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

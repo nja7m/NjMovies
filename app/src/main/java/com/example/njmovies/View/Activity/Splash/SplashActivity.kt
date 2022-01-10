@@ -1,4 +1,4 @@
-package com.example.njmovies.View.Activities.Splash
+package com.example.njmovies.View.Activity.Splash
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,8 @@ import android.os.Looper
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.njmovies.R
-import com.example.njmovies.View.Activities.Home.HomeActivity
-import com.example.njmovies.View.Activities.Login.LoginActivity
+import com.example.njmovies.View.Activity.Home.HomeActivity
+import com.example.njmovies.View.Activity.Login.LoginActivity
 
 
 class SplashActivity : AppCompatActivity() {

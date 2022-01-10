@@ -9,8 +9,10 @@ import retrofit2.HttpException
 import java.io.IOException
 
 //regular class implements pagingSource from paging library
-class MoviePagingSource constructor(private val movieCategory: MovieCategory) :
-	PagingSource<Int, MovieResult>() {
+class MoviePagingSource constructor(
+	private val movieCategory: MovieCategory,
+	private val query: String? = null
+) : PagingSource<Int, MovieResult>() {
 
 	private val repository = MovieRepository()
 
@@ -23,10 +25,11 @@ class MoviePagingSource constructor(private val movieCategory: MovieCategory) :
 				MovieCategory.NOW_PLAYING -> repository.getNowPlaying(page)
 				MovieCategory.TOP_RATED -> repository.getTopRated(page)
 				MovieCategory.UPCOMING -> repository.getUpComing(page)
+				MovieCategory.SEARCH -> query?.let { repository.searchMovies(it, page) }
 			}
 
 			LoadResult.Page(
-				response.results, prevKey = if (page == 1) null else page - 1,
+				response!!.results, prevKey = if (page == 1) null else page - 1,
 				nextKey = if (response.results.isEmpty()) null else page + 1
 			)
 		} catch (exception: IOException) {

@@ -9,8 +9,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.njmovies.Model.MovieCategory
-import com.example.njmovies.View.Activities.Home.HomeViewModel
-import com.example.njmovies.View.Home.MovieAdapter
+import com.example.njmovies.View.Activity.Home.HomeViewModel
+import com.example.njmovies.View.Adapter.MovieAdapter
 import com.example.njmovies.databinding.FragmentHomeBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged

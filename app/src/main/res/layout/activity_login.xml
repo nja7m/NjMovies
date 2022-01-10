@@ -5,58 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".View.Activities.Login.LoginActivity">
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonGoogleLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/mybutton"
-        android:text="Login with GOOGLE"
-        android:textColor="#F8F5F5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonFaceBookLogin" />
+    tools:context=".View.Activity.Login.LoginActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonEmailLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/mybutton"
-        android:text="Login "
+        android:text="@string/Login"
         android:textColor="#FBF8F8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonFaceBookLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/mybutton"
-        android:text="Login with facebook"
-        android:textColor="#F4F2F2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonEmailLogin" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="32dp"
-        android:text="Login to continue"
+        android:text="@string/Login_to_continue"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,9 +41,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
-        android:hint="Email"
+        android:hint="@string/Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
@@ -89,9 +61,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:hint="Password"
+        android:hint="@string/Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailTextField">
@@ -108,22 +80,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="24dp"
-        android:text="You don't have an account? "
+        android:layout_marginTop="32dp"
+        android:text="@string/you_do_not_have_an_account"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonGoogleLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonEmailLogin" />
 
     <TextView
         android:id="@+id/textViewRegister"
         android:layout_width="84dp"
         android:layout_height="26dp"
-        android:layout_marginTop="26dp"
-        android:text="REGISTER"
+        android:layout_marginTop="34dp"
+        android:text="@string/Register"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/buttonGoogleLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonEmailLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

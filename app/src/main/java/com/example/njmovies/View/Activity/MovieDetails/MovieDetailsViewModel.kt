@@ -1,9 +1,7 @@
-package com.example.njmovies.View.Activities.MovieDetails
+package com.example.njmovies.View.Activity.MovieDetails
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.njmovies.Model.MovieResult
 import com.example.njmovies.Model.TrailerResponse
 import com.example.njmovies.Model.TrailerResult
 import com.example.njmovies.Network.FirebaseService
@@ -48,11 +46,8 @@ class MovieDetailsViewModel : ViewModel() {
 		return liveData
 	}
 
-	fun getMovieList() = firebaseService.getMovieList()
 	fun movieExist(id: Long) = firebaseService.movieISExist(id)
 	fun removeMovie(id: Long, resultListener: ResultListener) =
 		firebaseService.deleteMovieFromList(id, resultListener)
-
-	fun getMovieById(id: Long) = movieRepository.getMovieById(id)
 
 }

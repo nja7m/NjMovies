@@ -11,8 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NjMovies">
+        <service
+            android:name=".Service.FirebaseNotificationService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity
-            android:name=".View.Activities.MovieDetails.MovieDetailsActivity"
+            android:name=".View.Activity.MovieDetails.MovieDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".View.MyList.MyListActivity"
@@ -21,13 +30,13 @@
             android:name=".View.MovieDetails.MovieDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".View.Activities.Home.HomeActivity"
+            android:name=".View.Activity.Home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".View.Activities.Register.RegisterActivity"
+            android:name=".View.Activity.Register.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".View.Activities.Splash.SplashActivity"
+            android:name=".View.Activity.Splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".View.Activities.Login.LoginActivity"
+            android:name=".View.Activity.Login.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

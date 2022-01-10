@@ -66,11 +66,13 @@ class FirebaseService {
 				.document(userUid)
 				.get()
 				.addOnSuccessListener { document ->
+					//println(document)
 					val list = document["movieList"] as List<Long>
 					liveData.postValue(list)
 				}
 				.addOnFailureListener { exception ->
 					liveData.postValue(null)
+//					println(firebaseAuthService!!.uid)
 					exception.printStackTrace()
 				}
 		}

@@ -1,4 +1,4 @@
-package com.example.njmovies.View.Activities.MovieDetails
+package com.example.njmovies.View.Activity.MovieDetails
 
 import android.os.Bundle
 import android.util.Log
@@ -114,87 +114,6 @@ class MovieDetailsActivity : AppCompatActivity() {
 		})
 
 
-//            viewModel.getMovieList().observeForever{
-//
-//            }
-//			var myList = viewModel.getMovieList()
-//
-//			viewModel.getMovieList().observe(viewLifecycleOwner, { myList ->
-////				var isAdded = myList.contains(movie.id)
-////				println(isAdded)
-////				println(movie.id)
-//				var check: Boolean
-//				if (myList.contains(movie.id)) {
-//					binding.addToMyListButton.text = "ADDED"
-//				} else {
-//					binding.addToMyListButton.text = "ADD TO MY LIST"
-//				}
-////				if (isAdded) {
-////					binding.addToMyListButton.text = "ADDED"
-//
-//
-//
-//				binding.addToMyListButton.setOnClickListener {
-//
-//					if (myList.contains(movie.id)) {
-////						binding.addToMyListButton.text = "ADD TO MY LIST"
-//						//TODO remove from list
-//					} else {
-//						viewModel.addMovieToList(movie.id, object : ResultListener {
-//							override fun onSuccess() {
-//								binding.addToMyListButton.text = "ADDDED"
-//								Toast.makeText(
-//									activity,
-//									"Movie ${movie.id} has been added to your list",
-//									Toast.LENGTH_SHORT
-//								).show()
-//
-//							}
-//
-//							override fun onFailure(error: Throwable) {
-//								Toast.makeText(
-//									activity,
-//									"Failed to add movie to your list",
-//									Toast.LENGTH_SHORT
-//								).show()
-//							}
-//
-//						})
-//					}
-//				}
-//
-//
-//			})
-
-
-//
-//
-//		binding.addToMyListButton.setOnClickListener {
-//
-//			viewModel.addMovieToList((movie.id).toLong(), object : ResultListener {
-//				override fun onSuccess() {
-//
-//
-//					binding.addToMyListButton.text = "ADDED"
-//
-//					Toast.makeText(
-//						this@MovieDetailsActivity,
-//						"Movie ${movie.id} has been added to your list",
-//						Toast.LENGTH_SHORT
-//					).show()
-//				}
-//
-//
-//				override fun onFailure(error: Throwable) {
-//					Toast.makeText(
-//						this@MovieDetailsActivity,
-//						"Failed to add movie to your list",
-//						Toast.LENGTH_SHORT
-//					).show()
-//				}
-//
-//			})
-//		}
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {

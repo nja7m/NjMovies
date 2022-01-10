@@ -1,14 +1,16 @@
-package com.example.njmovies.View.Activities.Home
+package com.example.njmovies.View.Activity.Home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.njmovies.R
-import com.example.njmovies.View.Activities.Login.LoginActivity
+import com.example.njmovies.View.Activity.Login.LoginActivity
 import com.example.njmovies.View.Fragment.HomeFragment
 import com.example.njmovies.View.Fragment.MyListFragment
 import com.example.njmovies.View.Fragment.SearchFragment
@@ -16,11 +18,10 @@ import com.example.njmovies.View.Fragment.SettingFragment
 import com.example.njmovies.databinding.ActivityHomeBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.messaging.FirebaseMessaging
 
-
+private const val TAG = "HomeActivity"
 class HomeActivity : AppCompatActivity() {
-	var drawerLayout: DrawerLayout? = null
-	var actionBarDrawerToggle: ActionBarDrawerToggle? = null
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 
@@ -32,6 +33,7 @@ class HomeActivity : AppCompatActivity() {
 		}
 
 		val viewModel: HomeViewModel by viewModels()
+		val firebaseMessaging = FirebaseMessaging.getInstance()
 		var binding = ActivityHomeBinding.inflate(layoutInflater)
 		setContentView(binding.root)
 		binding.tabLayout.getTabAt(0)?.setIcon(R.drawable.ic_baseline_home_24)
@@ -58,6 +60,18 @@ class HomeActivity : AppCompatActivity() {
 			}
 
 		})
+
+		firebaseMessaging.token.addOnCompleteListener { tokenTask ->
+			if (!tokenTask.isSuccessful) {
+				Log.w(TAG, "Fetching FCM registration token failed", tokenTask.exception)
+				return@addOnCompleteListener
+			}
+
+			val token = tokenTask.result
+			Log.i(TAG, "onCreate: Notifications token ($token)")
+			Toast.makeText(baseContext, "Notification token: $token", Toast.LENGTH_SHORT).show()
+		}
+
 
 	}
 

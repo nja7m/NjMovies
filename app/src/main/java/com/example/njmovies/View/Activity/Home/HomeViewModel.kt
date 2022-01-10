@@ -1,4 +1,4 @@
-package com.example.njmovies.View.Activities.Home
+package com.example.njmovies.View.Activity.Home
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -29,12 +29,21 @@ class HomeViewModel : ViewModel() {
 		}).flow
 	}
 
+	fun searchMovies(query: String?): Flow<PagingData<MovieResult>> {
+		return Pager(PagingConfig(25), pagingSourceFactory = {
+			MoviePagingSource(
+				MovieCategory.SEARCH,
+				query
+			)
+		}).flow
+	}
+
 	fun addMovieToList(id: Long, resultListener: ResultListener) {
 		firebaseService.addMovieToList(id, resultListener)
 	}
 
 	fun getMovieList() = firebaseService.getMovieList()
-	fun movieExist(id:Long)=firebaseService.movieISExist(id)
+	fun movieExist(id: Long) = firebaseService.movieISExist(id)
 
 	fun getMovieById(id: Long) = movieRepository.getMovieById(id)
 

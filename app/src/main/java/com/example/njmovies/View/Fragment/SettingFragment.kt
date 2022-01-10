@@ -10,8 +10,8 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.njmovies.R
-import com.example.njmovies.View.Activities.Home.HomeViewModel
-import com.example.njmovies.View.Activities.Login.LoginActivity
+import com.example.njmovies.View.Activity.Home.HomeViewModel
+import com.example.njmovies.View.Activity.Login.LoginActivity
 
 
 class SettingFragment : Fragment() {
@@ -32,37 +32,25 @@ class SettingFragment : Fragment() {
 
 		}
 		var contactSupport = v.findViewById<Button>(R.id.buttonContactSupport)
-        contactSupport.setOnClickListener {
-        val intent = Intent(Intent.ACTION_SENDTO)
-	        intent.data= Uri.parse("mailto:")
-	        intent.putExtra(Intent.EXTRA_EMAIL,"njah.rashid@outlook.com")
-	        intent.putExtra(Intent.EXTRA_SUBJECT,"Customer Service")
-	        intent.putExtra(Intent.EXTRA_TEXT," ")
-	        startActivity(intent)
+		contactSupport.setOnClickListener {
+			val intent = Intent(Intent.ACTION_SENDTO)
+			intent.data = Uri.parse("mailto:")
+			intent.putExtra(Intent.EXTRA_EMAIL, "njah.rashid@outlook.com")
+			intent.putExtra(Intent.EXTRA_SUBJECT, "Customer Service")
+			intent.putExtra(Intent.EXTRA_TEXT, " ")
+			startActivity(intent)
 
-        }
+		}
+
+
 		return v
 
-		// Inflate the layout for this fragment
-//		binding = FragmentSettingBinding.inflate(inflater,container,false)
-//        binding.buttonLogout.setOnClickListener {
-//        	viewModel.logout()
-//	        requireActivity().run{
-//		        startActivity(Intent(this, LoginActivity::class.java))
-//		        finish()
-//	        }
-//        }
-////	        Toast.makeText(this, "logged out", Toast.LENGTH_SHORT).show()
-////	        val intent =Intent(this@SettingFragment.context,LoginActivity::class.java)
-////	        startActivity(intent)
-//
-//
-//		return binding.root
 	}
 
 	companion object {
 		@JvmStatic
 		fun newInstance() = SettingFragment()
 	}
+
 
 }

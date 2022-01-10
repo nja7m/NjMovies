@@ -16,6 +16,6 @@
 
     <style name="AuthFields" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextColor">@color/white</item>
-        <item name="boxStrokeColor">@color/purple_200</item>
+        <item name="boxStrokeColor">#828282</item>
     </style>
 </resources>
