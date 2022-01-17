@@ -1,9 +1,7 @@
 package com.example.njmovies.Service
 
-import android.content.Intent
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.widget.Toast
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -32,10 +30,7 @@ class FirebaseNotificationService : FirebaseMessagingService() {
 			remoteMessage.notification?.let {
 
 				Toast.makeText(baseContext, "${it.title}: ${it.body}", Toast.LENGTH_SHORT).show()
-//				val intent = Intent("MovieNotification")
-//				intent.putExtra("title", it.title)
-//				intent.putExtra("body", it.body)
-//				broadcaster?.sendBroadcast(intent)
+
 			}
 		}
 	}

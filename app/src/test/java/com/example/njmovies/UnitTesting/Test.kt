@@ -14,7 +14,7 @@ class Test {
 	}
 	@Test
 	fun emailIsValidWithInvalidEmailThenReturnFalseValue(){
-		val validation = validator.emailIsValid("test@test.com")
+		val validation = validator.emailIsValid("test@test-com")
 		Assert.assertEquals(false,validation)
 	}
 

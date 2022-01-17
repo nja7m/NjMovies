@@ -3,11 +3,10 @@ package com.example.njmovies.View.Activity.Home
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.njmovies.R
 import com.example.njmovies.View.Activity.Login.LoginActivity
@@ -21,10 +20,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.messaging.FirebaseMessaging
 
 private const val TAG = "HomeActivity"
+
 class HomeActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-
 		if (FirebaseAuth.getInstance().currentUser == null) {
 			val intent = Intent(this, LoginActivity::class.java)
 			startActivity(intent)
@@ -35,6 +34,7 @@ class HomeActivity : AppCompatActivity() {
 		val viewModel: HomeViewModel by viewModels()
 		val firebaseMessaging = FirebaseMessaging.getInstance()
 		var binding = ActivityHomeBinding.inflate(layoutInflater)
+		setSupportActionBar(binding.toolbar)
 		setContentView(binding.root)
 		binding.tabLayout.getTabAt(0)?.setIcon(R.drawable.ic_baseline_home_24)
 		binding.tabLayout.getTabAt(1)?.setIcon(R.drawable.ic_baseline_search_24)
@@ -78,5 +78,10 @@ class HomeActivity : AppCompatActivity() {
 	private fun replaceFragment(fragment: Fragment) {
 		supportFragmentManager.beginTransaction()
 			.replace(R.id.home_fragment_container_view, fragment).commit()
+	}
+
+	override fun onCreateOptionsMenu(menu: Menu): Boolean {
+		menuInflater.inflate(R.menu.home_menu, menu)
+		return super.onCreateOptionsMenu(menu)
 	}
 }

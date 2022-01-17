@@ -10,7 +10,6 @@ import com.example.njmovies.Model.MovieResult
 import com.example.njmovies.Network.FirebaseService
 import com.example.njmovies.Repository.MovieRepository
 import com.example.njmovies.util.MoviePagingSource
-import com.example.njmovies.util.ResultListener
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.flow.Flow
 
@@ -38,12 +37,7 @@ class HomeViewModel : ViewModel() {
 		}).flow
 	}
 
-	fun addMovieToList(id: Long, resultListener: ResultListener) {
-		firebaseService.addMovieToList(id, resultListener)
-	}
-
 	fun getMovieList() = firebaseService.getMovieList()
-	fun movieExist(id: Long) = firebaseService.movieISExist(id)
 
 	fun getMovieById(id: Long) = movieRepository.getMovieById(id)
 

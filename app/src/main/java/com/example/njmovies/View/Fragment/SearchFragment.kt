@@ -34,6 +34,7 @@ class SearchFragment : Fragment() {
 				return false
 			}
 
+			//			will do search and bring data and submit
 			override fun onQueryTextChange(newText: String?): Boolean {
 				viewModel.viewModelScope.launch {
 					viewModel.searchMovies(newText).distinctUntilChanged()
@@ -50,7 +51,6 @@ class SearchFragment : Fragment() {
 
 		return binding.root
 	}
-
 
 	companion object {
 		@JvmStatic

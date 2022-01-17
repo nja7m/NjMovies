@@ -15,7 +15,7 @@ class MyListAdapter(private var list: MutableList<MovieResult> = mutableListOf()
 	RecyclerView.Adapter<MyListViewHolder>() {
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyListViewHolder {
 		var v = LayoutInflater.from(parent.context)
-			.inflate(R.layout.home_movie_card_view, parent, false)
+			.inflate(R.layout.mylist_card_view, parent, false)
 		return MyListViewHolder(v)
 	}
 

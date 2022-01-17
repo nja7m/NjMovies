@@ -8,10 +8,10 @@
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.2703125" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/drawable/mybutton.xml" value="0.2703125" />
-        <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/activity_home.xml" value="0.176" />
+        <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/activity_login.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/activity_movie_details.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/activity_movie_details.xml" value="0.264" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/activity_movie_dtails.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/activity_my_list.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/activity_register.xml" value="0.23645833333333333" />
@@ -24,7 +24,7 @@
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/fragment_search.xml" value="0.1" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/fragment_setting.xml" value="0.264" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/genre_card.xml" value="0.23645833333333333" />
-        <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/home_movie_card_view.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/home_movie_card_view.xml" value="0.1" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/movie_card_vie.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/movie_card_view.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Nj/Desktop/NjMovies/app/src/main/res/layout/mylist_card_view.xml" value="0.23645833333333333" />
