@@ -15,25 +15,38 @@
             android:id="@+id/buttonLogout"
             android:layout_width="182dp"
             android:layout_height="51dp"
-            android:layout_marginEnd="116dp"
-            android:layout_marginBottom="188dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="100dp"
             android:background="@drawable/mybutton"
             android:text="@string/Logout"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/buttonContactSupport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="120dp"
+        <TextView
+            android:id="@+id/contactSupport"
+            android:layout_width="140dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="110dp"
             android:layout_marginBottom="32dp"
-            android:background="@drawable/mybutton"
-            android:text="@string/contact_support"
-            android:textColor="@color/white"
+            android:text="Contact Support"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/buttonLogout"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/here"
+            android:layout_width="37dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/here"
+            android:textColor="#3F51B5"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonLogout"
+            app:layout_constraintStart_toEndOf="@+id/contactSupport" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

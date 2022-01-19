@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -69,7 +68,7 @@ class HomeActivity : AppCompatActivity() {
 
 			val token = tokenTask.result
 			Log.i(TAG, "onCreate: Notifications token ($token)")
-			Toast.makeText(baseContext, "Notification token: $token", Toast.LENGTH_SHORT).show()
+//			Toast.makeText(baseContext, "Notification token: $token", Toast.LENGTH_SHORT).show()
 		}
 
 

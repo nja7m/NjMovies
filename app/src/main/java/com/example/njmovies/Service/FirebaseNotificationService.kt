@@ -2,7 +2,6 @@ package com.example.njmovies.Service
 
 import android.os.Handler
 import android.os.Looper
-import android.widget.Toast
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -29,7 +28,7 @@ class FirebaseNotificationService : FirebaseMessagingService() {
 		handler.post {
 			remoteMessage.notification?.let {
 
-				Toast.makeText(baseContext, "${it.title}: ${it.body}", Toast.LENGTH_SHORT).show()
+//				Toast.makeText(baseContext, "${it.title}: ${it.body}", Toast.LENGTH_SHORT).show()
 
 			}
 		}
